@@ -1,16 +1,23 @@
 {
   "name": "fire-evacuation",
   "version": "1.0.0",
+  "description": "Application for fire evacuation!",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justindannguyen/campus-app.git"
+  },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "release": "cd android && gradlew assembleRelease && cd.."
   },
   "dependencies": {
     "immutability-helper": "^2.5.0",
     "native-base": "^2.3.3",
     "react": "16.0.0",
     "react-native": "0.50.3",
+    "react-native-charts-wrapper": "^0.2.10",
     "react-native-router-flux": "^4.0.0-beta.24",
     "react-native-spinkit": "^1.1.1",
     "react-native-vector-icons": "^4.4.2",

@@ -10,10 +10,10 @@
 "use strict"
 
 import { connect } from "react-redux"
-import Home from "../components"
+import Summary from "../components"
 
 const mapStateToProps = state => ({})
 
 const mapDispatchToProps = {}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Summary)

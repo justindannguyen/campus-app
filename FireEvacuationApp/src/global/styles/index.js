@@ -27,5 +27,16 @@ export const globalStyles = {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row"
+  },
+  bigMenuIcon: {
+    fontSize: 30
+  },
+  bigMenuIcon_Active: {
+    color: "black",
+    fontSize: 32
+  },
+  bigMenuIcon_Inactive: {
+    color: "lightgray",
+    fontSize: 30
   }
 }

@@ -11,8 +11,15 @@
 
 import { combineReducers } from "redux"
 import globalReducer from "../global/modules"
-import homeReducer from "../routes/Home/modules"
+import summaryReducer from "../routes/Summary/modules"
+import detailReducer from "../routes/Detail/modules"
+import settingReducer from "../routes/Setting/modules"
 
 export default function makeRootReducer() {
-  return combineReducers({ root: globalReducer, home: homeReducer })
+  return combineReducers({
+    root: globalReducer,
+    summary: summaryReducer,
+    detail: detailReducer,
+    setting: settingReducer
+  })
 }

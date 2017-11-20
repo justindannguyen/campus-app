@@ -13,7 +13,7 @@ import React, { Component } from "react"
 import { Text, View, processColor } from "react-native"
 import { PieChart } from "react-native-charts-wrapper"
 
-export default class Home extends Component {
+export default class Summary extends Component {
   constructor() {
     super()
 

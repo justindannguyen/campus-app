@@ -8,6 +8,3 @@
  * @format
  */
 "use strict"
-import HomeContainer from "./containers"
-
-export default HomeContainer

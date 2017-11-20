@@ -9,7 +9,7 @@
  */
 "use strict"
 
-import { actionHandlers } from "./HomeHandlers"
+import { actionHandlers } from "./SettingHandlers"
 
 const initialState = {}
 

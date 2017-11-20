@@ -11,7 +11,7 @@
 
 import React, { Component } from "react"
 import { Provider } from "react-redux"
-import { Router } from "react-native-router-flux"
+import { Router, Actions } from "react-native-router-flux"
 import createStore from "./store"
 import scenes from "./routes"
 
@@ -26,10 +26,12 @@ export default class AppRoot extends Component {
     }
   }
 
+  handleHardwareBackButton = () => Actions.pop()
+
   render() {
     return (
       <Provider store={this.state.store}>
-        <Router scenes={scenes} />
+        <Router scenes={scenes} backAndroidHandler={this.handleHardwareBackButton} />
       </Provider>
     )
   }

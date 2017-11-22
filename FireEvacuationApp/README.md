@@ -43,13 +43,8 @@ Run with ```--appIdSuffix``` parameter will fix the issue.
 react-native run-android --appIdSuffix debug
 ```
 ***
-We are using ```react-native-charts-wrapper``` and the latest release is not compatible with react native 0.50.+, so below errors will occurs:
-```
-undefined is not an object (evaluating '_react.PropTypes.bool')
-unknown
-AxisIface.js:5:21
-```
-Manual upgrade local folders to [this fork](https://github.com/solium/react-native-charts-wrapper)
+We are using ```react-native-charts-wrapper``` with customization,
+Manual upgrade local folders to [this fork](https://github.com/justindannguyen/react-native-charts-wrapper)
 Also update the ```react-native-charts-wrapper/android/build.gradle``` to target react-native version e.g. 0.50.3
 ```
 compile "com.facebook.react:react-native:0.50.+"

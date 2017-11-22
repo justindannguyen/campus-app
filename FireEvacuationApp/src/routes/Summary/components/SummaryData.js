@@ -10,17 +10,15 @@
 "use strict"
 
 import React, { Component } from "react"
-import { View } from "native-base"
+import { View, Label } from "native-base"
 import { styles } from "./styles"
 import SummaryChart from "./SummaryChart"
-import SummaryData from "./SummaryData"
 
 export default class Summary extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <SummaryChart />
-        <SummaryData />
+      <View style={styles.dataContainer}>
+        <Label>Hello</Label>
       </View>
     )
   }

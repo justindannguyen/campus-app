@@ -10,7 +10,7 @@
 "use strict"
 
 import React, { Component } from "react"
-import { Text, View, processColor } from "react-native"
+import { Text, View, processColor, LayoutAnimation } from "react-native"
 import { PieChart } from "react-native-charts-wrapper"
 import { styles } from "./styles"
 import { PropTypes } from "prop-types"
@@ -38,7 +38,10 @@ export default class SummaryChart extends Component {
     this.setState({ ...this.state, width, height })
   }
 
-  onPageChanged = index => this.props.setSelectedLocationAction(index)
+  onPageChanged = index => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.linear)
+    this.props.setSelectedIndex(index)
+  }
 
   renderChart = (index, totalPage) => {
     const { selectedSummary } = this.props
@@ -108,5 +111,5 @@ SummaryChart.propTypes = {
   }),
   selectedIndex: PropTypes.number,
   noOfLocation: PropTypes.number,
-  setSelectedLocationAction: PropTypes.func.isRequired
+  setSelectedIndex: PropTypes.func.isRequired
 }

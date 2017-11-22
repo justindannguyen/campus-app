@@ -32,10 +32,19 @@ export function loadSummaryData() {
   // TODO call API to get data, for now just return nothing
   return dispatch => {
     dispatch(receiveSummaryDataAction(null))
-    dispatch(setSelectedLocation(0))
+    dispatch(setSelectedIndex(0))
   }
 }
 
-export function setSelectedLocation(location) {
-  return dispatch => dispatch(setSelectedLocationAction(location))
+export function setSelectedIndex(index) {
+  return dispatch => dispatch(setSelectedLocationAction(index))
+}
+
+export function setSelectedSummaryId(id) {
+  return (dispatch, getState) => {
+    const index = getState().summary.summaryOfLocations.findIndex(summary => summary.id === id)
+    if (index >= 0) {
+      dispatch(setSelectedIndex(index))
+    }
+  }
 }

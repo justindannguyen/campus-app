@@ -10,6 +10,7 @@
 "use strict"
 
 import React, { Component } from "react"
+import { LayoutAnimation } from "react-native"
 import { View, Text } from "native-base"
 import { styles } from "./styles"
 import { PropTypes } from "prop-types"
@@ -26,6 +27,7 @@ export default class Summary extends Component {
   }
 
   onFullScreen = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
     let fullScreen = !this.state.fullScreen
     this.setState({ ...this.state, fullScreen })
   }
@@ -58,7 +60,8 @@ Summary.propTypes = {
   selectedSummary: PropTypes.object,
   noOfLocation: PropTypes.number,
   loadSummaryData: PropTypes.func.isRequired,
-  setSelectedLocationAction: PropTypes.func.isRequired
+  setSelectedSummaryId: PropTypes.func.isRequired,
+  setSelectedIndex: PropTypes.func.isRequired
 }
 
 Summary.defaultProps = {

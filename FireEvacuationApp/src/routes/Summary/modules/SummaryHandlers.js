@@ -25,6 +25,10 @@ function handleSetSelectedLocation(state, action) {
     },
     selectedSummary: {
       $set: state.summaryOfLocations[index]
+    },
+    // TODO random for now as mock data
+    childrenSummaries: {
+      $set: state.summaryOfLocations.filter(value => Math.random() > 0.3)
     }
   })
 }

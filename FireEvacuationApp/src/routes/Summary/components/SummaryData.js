@@ -31,6 +31,10 @@ import MaterialIcons from "react-native-vector-icons/dist/MaterialIcons"
 import { SAFETY, UNSAFETY, UNKNOWN } from "./constants"
 
 export default class SummaryData extends Component {
+  onValueSelected = selectedId => {
+    this.props.setSelectedSummaryId(selectedId)
+  }
+
   renderValues(summary) {
     return (
       <ListItem key={summary.id}>
@@ -49,7 +53,10 @@ export default class SummaryData extends Component {
           </Badge>
         </Body>
         <Right>
-          <TouchableOpacity>
+          {
+            // How to avoid this annoymous function? (how?passing parameter to callback)
+          }
+          <TouchableOpacity onPress={() => this.onValueSelected(summary.id)}>
             <MaterialIcons name="navigate-next" style={styles.listItemIcon} />
           </TouchableOpacity>
         </Right>
@@ -89,5 +96,6 @@ SummaryData.propTypes = {
     name: PropTypes.string.isRequired,
     values: PropTypes.object.isRequired
   }),
-  onFullScreen: PropTypes.func.isRequired
+  onFullScreen: PropTypes.func.isRequired,
+  setSelectedSummaryId: PropTypes.func.isRequired
 }

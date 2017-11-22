@@ -18,55 +18,63 @@ export const actionHandlers = {
 }
 
 function handleSetSelectedLocation(state, action) {
+  const index = action.payload
   return update(state, {
     selectedIndex: {
-      $set: action.payload
+      $set: index
+    },
+    selectedSummary: {
+      $set: state.summaryOfLocations[index]
     }
   })
 }
 
 function handleLoadSummaryData(state, action) {
   // TODO this is mock data
+  const data = [
+    {
+      id: "e1",
+      name: "eTown 1",
+      values: {
+        ["safety"]: 5,
+        ["unsafety"]: 10,
+        ["unknown"]: 55
+      }
+    },
+    {
+      id: "e2",
+      name: "eTown 2",
+      values: {
+        ["safety"]: 15,
+        ["unsafety"]: 12,
+        ["unknown"]: 245
+      }
+    },
+    {
+      id: "e2.G",
+      name: "E2 Ground",
+      values: {
+        ["safety"]: 10,
+        ["unsafety"]: 10,
+        ["unknown"]: 200
+      }
+    },
+    {
+      id: "e2.3",
+      name: "E2 3Floor",
+      values: {
+        ["satefy"]: 5,
+        ["unsatefy"]: 2,
+        ["unknown"]: 245
+      }
+    }
+  ]
   return update(state, {
-    summaryLocations: {
-      $set: [
-        {
-          id: "e1",
-          name: "eTown 1",
-          values: {
-            ["safety"]: 5,
-            ["unsafety"]: 10,
-            ["unknown"]: 55
-          }
-        },
-        {
-          id: "e2",
-          name: "eTown 2",
-          values: {
-            ["safety"]: 15,
-            ["unsafety"]: 12,
-            ["unknown"]: 245
-          }
-        },
-        {
-          id: "e2.G",
-          name: "E2 Ground",
-          values: {
-            ["safety"]: 10,
-            ["unsafety"]: 10,
-            ["unknown"]: 200
-          }
-        },
-        {
-          id: "e2.3",
-          name: "E2 3Floor",
-          values: {
-            ["satefy"]: 5,
-            ["unsatefy"]: 2,
-            ["unknown"]: 245
-          }
-        }
-      ]
+    summaryOfLocations: {
+      $set: data
+    },
+    noOfLocation: {
+      $set: data.length
     }
   })
 }

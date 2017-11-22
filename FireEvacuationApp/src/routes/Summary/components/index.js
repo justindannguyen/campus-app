@@ -17,39 +17,50 @@ import SummaryChart from "./SummaryChart"
 import SummaryData from "./SummaryData"
 
 export default class Summary extends Component {
+  constructor() {
+    super()
+    this.state = { fullScreen: false }
+  }
   componentDidMount = () => {
     this.props.loadSummaryData()
   }
 
-  renderNoData() {
-    return (
-      <View style={styles.container}>
-        <Text>No data</Text>
-      </View>
-    )
+  onFullScreen = () => {
+    let fullScreen = !this.state.fullScreen
+    this.setState({ ...this.state, fullScreen })
   }
 
   render() {
-    if (Object.keys(this.props.summaryLocations).length === 0 || this.props.selectedIndex == null) {
-      return this.renderNoData()
+    if (this.props.selectedSummary == null) {
+      return <Text>No data</Text>
+    }
+
+    if (this.state.fullScreen) {
+      return (
+        <View style={styles.container}>
+          <SummaryData {...this.props} onFullScreen={this.onFullScreen} />
+        </View>
+      )
     }
 
     return (
       <View style={styles.container}>
         <SummaryChart {...this.props} />
-        <SummaryData {...this.props} />
+        <SummaryData {...this.props} onFullScreen={this.onFullScreen} />
       </View>
     )
   }
 }
 
 Summary.propTypes = {
-  summaryLocations: PropTypes.array,
+  childrenSummaries: PropTypes.array,
   selectedIndex: PropTypes.number,
+  selectedSummary: PropTypes.object,
+  noOfLocation: PropTypes.number,
   loadSummaryData: PropTypes.func.isRequired,
   setSelectedLocationAction: PropTypes.func.isRequired
 }
 
 Summary.defaultProps = {
-  summaryLocations: []
+  childrenSummaries: []
 }

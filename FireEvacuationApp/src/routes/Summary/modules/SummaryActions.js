@@ -32,9 +32,7 @@ export function loadSummaryData() {
   // TODO call API to get data, for now just return nothing
   return dispatch => {
     dispatch(receiveSummaryDataAction(null))
-    new Promise((resolve, reject) => {
-      setTimeout(() => resolve(3), 5000)
-    }).then(index => dispatch(setSelectedLocationAction(index)))
+    dispatch(setSelectedLocation(0))
   }
 }
 

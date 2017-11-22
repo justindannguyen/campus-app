@@ -17,7 +17,7 @@ import Icon from "react-native-vector-icons/dist/MaterialIcons"
 
 export default class SwiperButtons extends Component {
   renderNextButton = () => {
-    if (this.props.index >= this.props.totalPage - 1) {
+    if (this.props.index >= this.props.totalPage - 1 || this.props.totalPage == 0) {
       return <View />
     }
 
@@ -29,7 +29,7 @@ export default class SwiperButtons extends Component {
   }
 
   renderPrevButton = () => {
-    if (this.props.index <= 0) {
+    if (this.props.index <= 0 || this.props.totalPage == 0) {
       return <View />
     }
 

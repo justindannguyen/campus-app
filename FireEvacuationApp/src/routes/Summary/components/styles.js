@@ -24,10 +24,27 @@ export const styles = {
     marginBottom: 10
   },
   dataContainer: {
-    ...globalStyles.flexLayout,
-    backgroundColor: "gray"
-  },
-  dataHeader: {
     ...globalStyles.flexLayout
+  },
+  dataHeaderIcon: {
+    ...globalStyles.bigMenuIcon
+  },
+  dataHeaderDescription: {
+    fontSize: 7,
+    marginTop: 5
+  },
+  dataContentContainer: {
+    ...globalStyles.flexLayout,
+    backgroundColor: "white"
+  },
+  valueWrapper: {
+    ...globalStyles.flexRowLayoutCenter,
+    justifyContent: "flex-end"
+  },
+  value: {
+    width: 50
+  },
+  listItemIcon: {
+    fontSize: 30
   }
 }

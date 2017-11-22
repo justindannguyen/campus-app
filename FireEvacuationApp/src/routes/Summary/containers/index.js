@@ -13,9 +13,11 @@ import { connect } from "react-redux"
 import Summary from "../components"
 import { loadSummaryData, setSelectedLocationAction } from "../modules/SummaryActions"
 
-const mapStateToProps = state => ({
-  summaryLocations: state.summary.summaryLocations,
-  selectedIndex: state.summary.selectedIndex
+const mapStateToProps = ({ summary }) => ({
+  childrenSummaries: summary.summaryOfLocations,
+  selectedIndex: summary.selectedIndex,
+  selectedSummary: summary.selectedSummary,
+  noOfLocation: summary.noOfLocation
 })
 
 const mapDispatchToProps = {

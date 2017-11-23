@@ -16,12 +16,13 @@ import { styles } from "./styles"
 import { PropTypes } from "prop-types"
 import update from "immutability-helper"
 import Swiper from "../../../global/components/Swiper"
-import { SAFETY, UNSAFETY, UNKNOWN } from "./constants"
+import { constants } from "../../../global"
+import { globalStyles } from "../../../global/styles"
 
 const colors = {
-  safety: processColor("#C0FF8C"),
-  unknown: processColor("#FFF78C"),
-  unsatefy: processColor("#FF8C9D"),
+  safety: processColor(globalStyles.safety.color),
+  unknown: processColor(globalStyles.unknown.color),
+  unsatefy: processColor(globalStyles.unsafety.color),
   hole: processColor("#f0f0f0"),
   circle: processColor("#f0f0f088")
 }
@@ -49,9 +50,9 @@ export default class SummaryChart extends Component {
       dataSets: [
         {
           values: [
-            { value: selectedSummary.values[SAFETY] || 0, label: "Safety" },
-            { value: selectedSummary.values[UNKNOWN] || 0, label: "Unknown" },
-            { value: selectedSummary.values[UNSAFETY] || 0, label: "Unsafety" }
+            { value: selectedSummary.values[constants.safety] || 0, label: "Safety" },
+            { value: selectedSummary.values[constants.unknown] || 0, label: "Unknown" },
+            { value: selectedSummary.values[constants.unsafety] || 0, label: "Unsafety" }
           ],
           label: "",
           config: {

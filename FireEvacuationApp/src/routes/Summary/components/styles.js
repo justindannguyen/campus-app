@@ -17,14 +17,15 @@ export const styles = {
   },
   chartContainer: {
     ...globalStyles.flexLayoutCenter,
-    flex: 2
+    flex: 3
   },
   chart: {
     ...globalStyles.flexLayout,
     marginBottom: 10
   },
   dataContainer: {
-    ...globalStyles.flexLayout
+    ...globalStyles.flexLayout,
+    flex: 2
   },
   dataHeaderIcon: {
     ...globalStyles.bigMenuIcon
@@ -34,8 +35,7 @@ export const styles = {
     marginTop: 5
   },
   dataContentContainer: {
-    ...globalStyles.flexLayout,
-    backgroundColor: "white"
+    ...globalStyles.listViewContainer
   },
   valueWrapper: {
     ...globalStyles.flexRowLayoutCenter,

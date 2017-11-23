@@ -37,10 +37,11 @@ export default class Summary extends Component {
       return <Text>No data</Text>
     }
 
-    if (this.state.fullScreen) {
+    const fullScreen = this.state.fullScreen
+    if (fullScreen) {
       return (
         <View style={styles.container}>
-          <SummaryData {...this.props} onFullScreen={this.onFullScreen} />
+          <SummaryData {...this.props} onFullScreen={this.onFullScreen} fullScreen={fullScreen} />
         </View>
       )
     }
@@ -48,7 +49,7 @@ export default class Summary extends Component {
     return (
       <View style={styles.container}>
         <SummaryChart {...this.props} />
-        <SummaryData {...this.props} onFullScreen={this.onFullScreen} />
+        <SummaryData {...this.props} onFullScreen={this.onFullScreen} fullScreen={fullScreen} />
       </View>
     )
   }

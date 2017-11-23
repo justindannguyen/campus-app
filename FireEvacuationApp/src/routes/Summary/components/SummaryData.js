@@ -27,8 +27,8 @@ import {
 } from "native-base"
 import { PropTypes } from "prop-types"
 import Icon from "react-native-vector-icons/EvilIcons"
-import MaterialIcons from "react-native-vector-icons/dist/MaterialIcons"
-import { SAFETY, UNSAFETY, UNKNOWN } from "./constants"
+import MaterialIcons from "react-native-vector-icons/MaterialIcons"
+import { constants } from "../../../global"
 
 export default class SummaryData extends Component {
   onValueSelected = selectedId => {
@@ -43,13 +43,13 @@ export default class SummaryData extends Component {
         </Left>
         <Body style={styles.valueWrapper}>
           <Badge style={styles.value}>
-            <Text>{summary.values[UNSAFETY] || 0}</Text>
+            <Text>{summary.values[constants.UNSAFETY] || 0}</Text>
           </Badge>
           <Badge warning style={styles.value}>
-            <Text>{summary.values[UNKNOWN] || 0}</Text>
+            <Text>{summary.values[constants.UNKNOWN] || 0}</Text>
           </Badge>
           <Badge success style={styles.value}>
-            <Text>{summary.values[SAFETY] || 0}</Text>
+            <Text>{summary.values[constants.SAFETY] || 0}</Text>
           </Badge>
         </Body>
         <Right>
@@ -65,14 +65,15 @@ export default class SummaryData extends Component {
   }
   render() {
     const { selectedSummary } = this.props
+    const description = `  (Touch to ${this.props.fullScreen ? "collapse" : "expand"}!)`
     return (
-      <View style={styles.dataContentContainer}>
+      <View style={styles.dataContainer}>
         <Button full light onPress={this.props.onFullScreen}>
           <Icon name="location" style={styles.dataHeaderIcon} />
           <Label>{selectedSummary.name}</Label>
-          <Label style={styles.dataHeaderDescription}> (Click to toggle!)</Label>
+          <Label style={styles.dataHeaderDescription}>{description}</Label>
         </Button>
-        <Content>
+        <Content style={styles.dataContentContainer}>
           <List>
             {this.renderValues(selectedSummary)}
             {this.props.childrenSummaries.map(summary => this.renderValues(summary))}
@@ -96,6 +97,7 @@ SummaryData.propTypes = {
     name: PropTypes.string.isRequired,
     values: PropTypes.object.isRequired
   }),
+  fullScreen: PropTypes.bool.isRequired,
   onFullScreen: PropTypes.func.isRequired,
   setSelectedSummaryId: PropTypes.func.isRequired
 }

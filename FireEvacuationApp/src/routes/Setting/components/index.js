@@ -22,6 +22,7 @@ import {
   Thumbnail,
   Text
 } from "native-base"
+import { View as AnimatedView } from "react-native-animatable"
 import { globalStyles } from "../../../global/styles"
 import { styles } from "./styles"
 import LinearGradient from "react-native-linear-gradient"
@@ -59,9 +60,9 @@ export default class Setting extends Component {
             style={styles.topContainerBackground}>
             <Text style={styles.profileText}>Justin Nguyen</Text>
           </LinearGradient>
-          <View style={styles.profileContainer}>
+          <AnimatedView style={styles.profileContainer} animation="zoomInDown" useNativeDriver>
             <Thumbnail large source={profile} style={styles.profilePicture} />
-          </View>
+          </AnimatedView>
         </View>
         <View style={styles.bottomContainer}>
           <List button>

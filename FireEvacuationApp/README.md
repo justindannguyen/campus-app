@@ -14,6 +14,10 @@ Beside `react` and `react-native` libraries as default, below are additional one
 * [Spinkit](https://github.com/maxs15/react-native-spinkit) For the cool spin components.
 * [SVG Icons](https://github.com/oblador/react-native-vector-icons) Beside icons from `native-base`,
   `react-native-vector-icons` provide much more options.
+* [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient)
+  For making gradient background of setting screen.
+* [react-native-animatable](https://github.com/oblador/react-native-animatable) Making basic
+  annimation for profile picture
 * [react-native-router-flux](https://github.com/aksonov/react-native-router-flux) Provide the
   navigation platform between screens, history stack.
   * [reactnavigation](https://reactnavigation.org/) Maybe the other alternative good candidates from

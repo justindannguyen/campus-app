@@ -19,6 +19,7 @@
     "react": "16.0.0",
     "react-native": "0.50.3",
     "react-native-charts-wrapper": "^0.3.0",
+    "react-native-linear-gradient": "^2.3.0",
     "react-native-router-flux": "^4.0.0-beta.24",
     "react-native-spinkit": "^1.1.1",
     "react-native-vector-icons": "^4.4.2",

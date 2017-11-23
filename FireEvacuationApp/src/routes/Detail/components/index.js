@@ -12,7 +12,7 @@
 import React, { Component } from "react"
 import { styles } from "./styles"
 import { globalStyles } from "../../../global/styles"
-import { constants, showSuccess } from "../../../global"
+import { constants } from "../../../global"
 import { PropTypes } from "prop-types"
 import {
   View,
@@ -44,21 +44,21 @@ export default class Detail extends Component {
         : status === constants.unsafety ? globalStyles.unsafety : globalStyles.unknown
     return (
       <ListItem key={attendance} avatar>
-        <Left style={globalStyles.listViewItemSmall}>
+        <Left>
           <Thumbnail small source={profile} />
         </Left>
-        <Body style={globalStyles.listViewItemSmall}>
+        <Body>
           <Text>Nguyen Van Tuan</Text>
           <Text note>At etown 1</Text>
         </Body>
-        <Right style={[globalStyles.listViewItemSmall, globalStyles.alignCenter]}>
+        <Right style={[globalStyles.alignCenter]}>
           <MaterialCommunityIcons name="checkbox-blank-circle" style={[dotStyle, styles.dotIcon]} />
         </Right>
       </ListItem>
     )
   }
 
-  sendNotification = () => showSuccess("Send notification to people...")
+  sendNotification = () => alert("Send notification to people...")
 
   render() {
     return (

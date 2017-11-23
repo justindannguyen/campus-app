@@ -10,6 +10,12 @@
 "use strict"
 
 export const globalStyles = {
+  noBorder: {
+    borderBottomWidth: 0,
+    borderRightWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0
+  },
   flexLayout: {
     flex: 1
   },
@@ -50,16 +56,16 @@ export const globalStyles = {
     backgroundColor: "white"
   },
   listViewItemSmall: {
-    paddingTop: 4,
-    paddingBottom: 4
+    paddingTop: 8,
+    paddingBottom: 8
   },
   unsafety: {
-    color: "orangered"
+    color: "#f33334"
   },
   safety: {
-    color: "limegreen"
+    color: "#4cba6b"
   },
   unknown: {
-    color: "goldenrod"
+    color: "#f29b1d"
   }
 }

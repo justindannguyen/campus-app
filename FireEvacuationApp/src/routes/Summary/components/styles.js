@@ -39,7 +39,6 @@ export const styles = {
   },
   valueWrapper: {
     ...globalStyles.flexRowLayoutCenter,
-    ...globalStyles.listViewItemSmall,
     justifyContent: "flex-end"
   },
   value: {

@@ -38,8 +38,8 @@ export default class SummaryData extends Component {
 
   renderValues(summary) {
     return (
-      <ListItem key={summary.id} style={globalStyles.listViewItemSmall}>
-        <Left style={globalStyles.listViewItemSmall}>
+      <ListItem style={globalStyles.listViewItemSmall} key={summary.id}>
+        <Left>
           <Text>{summary.name}</Text>
         </Left>
         <Body style={styles.valueWrapper}>
@@ -53,7 +53,7 @@ export default class SummaryData extends Component {
             <Text>{summary.values[constants.safety] || 0}</Text>
           </Badge>
         </Body>
-        <Right style={globalStyles.listViewItemSmall}>
+        <Right>
           {
             // How to avoid this annoymous function? (how?passing parameter to callback)
           }

@@ -27,10 +27,18 @@ export const styles = {
     ...globalStyles.flexLayout,
     flex: 2
   },
+  dataHeaderContainer: {
+    backgroundColor: globalStyles.mainColor.color
+  },
   dataHeaderIcon: {
-    ...globalStyles.bigMenuIcon
+    ...globalStyles.bigMenuIcon,
+    ...globalStyles.mainContrastColor
+  },
+  dataHeaderText: {
+    ...globalStyles.mainContrastColor
   },
   dataHeaderDescription: {
+    ...globalStyles.mainContrastColor,
     fontSize: 7,
     marginTop: 5
   },

@@ -16,17 +16,18 @@ export const styles = {
     ...globalStyles.listViewContainer
   },
   searchContainer: {
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: globalStyles.mainColor.color
   },
   searchTextContainer: {
     flex: 3
   },
   searchTextIcon: {
     ...globalStyles.mediumMenuIcon,
-    color: "white"
+    ...globalStyles.mainContrastColor
   },
   searchText: {
-    color: "white",
+    ...globalStyles.mainContrastColor,
     height: 40
   },
   headerMenuButton: {
@@ -38,7 +39,7 @@ export const styles = {
   },
   headerMenuIcon: {
     ...globalStyles.bigMenuIcon,
-    color: "white"
+    ...globalStyles.mainContrastColor
   },
   dotIcon: {
     fontSize: 15

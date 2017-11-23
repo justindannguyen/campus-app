@@ -10,7 +10,7 @@
 "use strict"
 
 import React, { Component } from "react"
-import { TouchableOpacity } from "react-native"
+import { TouchableOpacity, ImageBackground } from "react-native"
 import { styles } from "./styles"
 import {
   View,
@@ -69,9 +69,9 @@ export default class SummaryData extends Component {
     const description = `  (Touch to ${this.props.fullScreen ? "collapse" : "expand"}!)`
     return (
       <View style={styles.dataContainer}>
-        <Button full light onPress={this.props.onFullScreen}>
+        <Button full style={styles.dataHeaderContainer} onPress={this.props.onFullScreen}>
           <Icon name="location" style={styles.dataHeaderIcon} />
-          <Label>{selectedSummary.name}</Label>
+          <Label style={styles.dataHeaderText}>{selectedSummary.name}</Label>
           <Label style={styles.dataHeaderDescription}>{description}</Label>
         </Button>
         <Content style={styles.dataContentContainer}>

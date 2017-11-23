@@ -38,6 +38,6 @@ export const styles = {
   },
   buttonIcon: {
     fontSize: 40,
-    color: "#007aff"
+    ...globalStyles.mainColor
   }
 }

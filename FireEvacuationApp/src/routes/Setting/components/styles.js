@@ -46,6 +46,7 @@ export const styles = {
     flex: 1
   },
   menuIcon: {
-    fontSize: 35
+    fontSize: 35,
+    ...globalStyles.mainColor
   }
 }

@@ -10,6 +10,12 @@
 "use strict"
 
 export const globalStyles = {
+  mainColor: {
+    color: "#24b0cb"
+  },
+  mainContrastColor: {
+    color: "white"
+  },
   noBorder: {
     borderBottomWidth: 0,
     borderRightWidth: 0,
@@ -42,7 +48,7 @@ export const globalStyles = {
     fontSize: 30
   },
   bigMenuIcon_Active: {
-    color: "black",
+    color: "#24b0cb",
     fontSize: 32
   },
   bigMenuIcon_Inactive: {

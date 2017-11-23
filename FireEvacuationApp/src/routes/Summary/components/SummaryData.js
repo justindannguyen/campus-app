@@ -29,6 +29,7 @@ import { PropTypes } from "prop-types"
 import Icon from "react-native-vector-icons/EvilIcons"
 import MaterialIcons from "react-native-vector-icons/MaterialIcons"
 import { constants } from "../../../global"
+import { globalStyles } from "../../../global/styles/index"
 
 export default class SummaryData extends Component {
   onValueSelected = selectedId => {
@@ -37,22 +38,22 @@ export default class SummaryData extends Component {
 
   renderValues(summary) {
     return (
-      <ListItem key={summary.id}>
-        <Left>
+      <ListItem key={summary.id} style={globalStyles.listViewItemSmall}>
+        <Left style={globalStyles.listViewItemSmall}>
           <Text>{summary.name}</Text>
         </Left>
         <Body style={styles.valueWrapper}>
           <Badge style={styles.value}>
-            <Text>{summary.values[constants.UNSAFETY] || 0}</Text>
+            <Text>{summary.values[constants.unsafety] || 0}</Text>
           </Badge>
           <Badge warning style={styles.value}>
-            <Text>{summary.values[constants.UNKNOWN] || 0}</Text>
+            <Text>{summary.values[constants.unknown] || 0}</Text>
           </Badge>
           <Badge success style={styles.value}>
-            <Text>{summary.values[constants.SAFETY] || 0}</Text>
+            <Text>{summary.values[constants.safety] || 0}</Text>
           </Badge>
         </Body>
-        <Right>
+        <Right style={globalStyles.listViewItemSmall}>
           {
             // How to avoid this annoymous function? (how?passing parameter to callback)
           }

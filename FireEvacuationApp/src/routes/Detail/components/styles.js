@@ -12,8 +12,33 @@
 import { globalStyles } from "../../../global/styles"
 
 export const styles = {
-  container: {
+  listContainer: {
     ...globalStyles.listViewContainer
+  },
+  searchContainer: {
+    alignItems: "center"
+  },
+  searchTextContainer: {
+    flex: 3
+  },
+  searchTextIcon: {
+    ...globalStyles.mediumMenuIcon,
+    color: "white"
+  },
+  searchText: {
+    color: "white",
+    height: 40
+  },
+  headerMenuButton: {
+    width: 40
+  },
+  headerMenu: {
+    ...globalStyles.flexRowLayoutCenter,
+    justifyContent: "flex-end"
+  },
+  headerMenuIcon: {
+    ...globalStyles.bigMenuIcon,
+    color: "white"
   },
   dotIcon: {
     fontSize: 15

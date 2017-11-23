@@ -28,6 +28,10 @@ export const globalStyles = {
     justifyContent: "center",
     flexDirection: "row"
   },
+  alignCenter: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
   bigMenuIcon: {
     fontSize: 30
   },
@@ -39,8 +43,15 @@ export const globalStyles = {
     color: "lightgray",
     fontSize: 30
   },
+  mediumMenuIcon: {
+    fontSize: 25
+  },
   listViewContainer: {
     backgroundColor: "white"
+  },
+  listViewItemSmall: {
+    paddingTop: 4,
+    paddingBottom: 4
   },
   unsafety: {
     color: "orangered"

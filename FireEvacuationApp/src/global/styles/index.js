@@ -19,8 +19,8 @@ export const globalStyles = {
   noBorder: {
     borderBottomWidth: 0,
     borderRightWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0
+    borderTopWidth: 0,
+    borderLeftWidth: 0
   },
   flexLayout: {
     flex: 1

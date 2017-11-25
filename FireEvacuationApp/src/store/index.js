@@ -18,7 +18,7 @@ const log = createLogger({ diff: true, collapsed: true })
 
 // a function which can create our store and auto-persist the data
 export default function createReduxStore(initialState = {}) {
-  const middlewares = [thunk]
+  const middlewares = [thunk, log]
   const enhancers = []
 
   const store = createStore(

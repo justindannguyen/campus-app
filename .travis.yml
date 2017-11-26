@@ -2,6 +2,6 @@ language: java
 sudo: true
 script: cd fire-evacuation-server && mvnw clean install && cd..
 before_install:
-  - chmod +x /fire-evacuation-server/mvnw
+  - chmod +x fire-evacuation-server/mvnw
 after_success:
   - bash <(curl -s https://codecov.io/bash)

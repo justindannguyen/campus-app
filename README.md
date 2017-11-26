@@ -12,6 +12,7 @@ Navigate to sub-projects [README](FireEvacuationApp/README.md)
 
 [![codecov](https://codecov.io/gh/justindannguyen/campus-app/branch/master/graph/badge.svg)](https://codecov.io/gh/justindannguyen/campus-app)
 [![Build Status](https://travis-ci.org/justindannguyen/campus-app.svg?branch=master)](https://travis-ci.org/justindannguyen/campus-app)
+
 Navigate to sub-projects [README](FireEvacuationApp/README.md)
 
 ## Licenses

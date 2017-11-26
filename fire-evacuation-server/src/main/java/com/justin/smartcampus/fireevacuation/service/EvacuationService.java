@@ -30,8 +30,9 @@ public class EvacuationService {
         .map(EvacuationConverter::convertDocumentToDto)
         .collect(Collectors.toList());
   }
-  
+
   public List<EvacuationDto> saveFromStrings(final Stream<String> lineStream) {
+    evacuationRepository.deleteAll();
     return evacuationRepository.saveAll(lineStream.map(EvacuationConverter::convertStringToDocument)
         .filter(document -> document != null)
         .collect(Collectors.toList()))

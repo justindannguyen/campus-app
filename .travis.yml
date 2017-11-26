@@ -1,6 +1,6 @@
 language: java
 sudo: true
-script: cd fire-evacuation-server && mvnw clean install && cd..
+script: cd fire-evacuation-server && ./mvnw clean install && cd..
 before_install:
   - chmod +x fire-evacuation-server/mvnw
 after_success:

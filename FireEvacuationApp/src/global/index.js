@@ -23,6 +23,13 @@ function showToast(configs = {}) {
   Toast.show(configs)
 }
 
+export function handleError(error) {
+  // TODO add the detail implementation.
+  console.log(error)
+
+  showError(error.userMessage || error.message || error.toString())
+}
+
 /**
  * Show a success toast from given message.
  *

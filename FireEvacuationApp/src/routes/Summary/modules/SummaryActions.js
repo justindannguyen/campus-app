@@ -21,7 +21,7 @@ export function setSelectedLocationAction(location) {
   }
 }
 
-function receiveSummaryDataAction(summaryData) {
+export function receiveSummaryDataAction(summaryData) {
   return {
     type: RECEIVE_SUMMARY_DATA,
     payload: summaryData

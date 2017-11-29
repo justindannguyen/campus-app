@@ -27,6 +27,8 @@ import { globalStyles } from "../../../global/styles"
 import { styles } from "./styles"
 import LinearGradient from "react-native-linear-gradient"
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+import { PropTypes } from "prop-types"
+import StartFireEvacuation from "./StartFireEvacuation"
 
 const profile = require("../../../assets/images/profile.jpeg")
 const gradident = {
@@ -38,8 +40,9 @@ const gradident = {
 
 export default class Setting extends Component {
   openSource = () => {
-    alert("about")
+    alert("open source")
   }
+
   about = () => {
     alert("about")
   }
@@ -66,6 +69,7 @@ export default class Setting extends Component {
         </View>
         <View style={styles.bottomContainer}>
           <List button>
+            <StartFireEvacuation setFireAlarm={this.props.setFireAlarm} />
             <ListItem icon onPress={this.openSource}>
               <Left>
                 <MaterialCommunityIcons style={styles.menuIcon} name="library-books" />
@@ -95,4 +99,8 @@ export default class Setting extends Component {
       </Container>
     )
   }
+}
+
+Setting.propTypes = {
+  setFireAlarm: PropTypes.func.isRequired
 }

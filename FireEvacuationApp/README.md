@@ -43,6 +43,8 @@ Beside `react` and `react-native` libraries as default, below are additional one
   of states (predictable)
 * [react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper) For the
   charts
+* [react-native-document-picker](https://github.com/Elyx0/react-native-document-picker) for pickup
+  the attendance file from local SD card (fire explorer)
 
 ### Development
 

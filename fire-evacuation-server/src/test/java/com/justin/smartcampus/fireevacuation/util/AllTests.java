@@ -11,7 +11,8 @@ import org.junit.runners.Suite.SuiteClasses;
  * @author tuan3.nguyen@gmail.com
  */
 @RunWith(Suite.class)
-@SuiteClasses({EvacuationConverterTest.class, EvacuationStatusTest.class})
+@SuiteClasses({EvacuationConverterTest.class, EvacuationStatusTest.class,
+    EvacuationSummaryCollectorTest.class})
 public class AllTests {
 
 }

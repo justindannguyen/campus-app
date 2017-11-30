@@ -19,6 +19,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.justin.smartcampus.fireevacuation.dto.EvacuationDto;
+import com.justin.smartcampus.fireevacuation.dto.EvacuationSummaryDto;
 import com.justin.smartcampus.fireevacuation.entity.Evacuation;
 import com.justin.smartcampus.fireevacuation.repository.EvacuationRepository;
 
@@ -69,10 +70,10 @@ public class EvacuationServiceTest {
     final String line = String.join(";", username, fullname, status, locationName);
     Mockito.when(evacuationRepository.saveAll(ArgumentMatchers.any()))
         .thenAnswer(params -> params.getArguments()[0]);
-    final EvacuationDto dto = evacuationService.saveFromStrings(Stream.of(line)).get(0);
-    Assert.assertTrue(
-        username.equals(dto.getUsername()) && status.equalsIgnoreCase(dto.getEvacuationStatus())
-            && locationName.equals(dto.getLocationName()) && username.equals(dto.getUsername()));
+    final EvacuationSummaryDto dto = evacuationService.saveFromStrings(Stream.of(line)).get(0);
+
+    Assert.assertTrue(dto.getUnknownCount() == 0 && dto.getSafetyCount() == 1
+        && dto.getUnsafetyCount() == 0 && locationName.equals(dto.getLocationName()));
   }
 
   @Test
@@ -85,7 +86,8 @@ public class EvacuationServiceTest {
     final String invalidLine = "";
     Mockito.when(evacuationRepository.saveAll(ArgumentMatchers.any()))
         .thenAnswer(params -> params.getArguments()[0]);
-    final List<EvacuationDto> dto = evacuationService.saveFromStrings(Stream.of(line, invalidLine));
+    final List<EvacuationSummaryDto> dto =
+        evacuationService.saveFromStrings(Stream.of(line, invalidLine));
     Assert.assertTrue(dto.size() == 1);
   }
 

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.justin.smartcampus.fireevacuation.dto.EvacuationDto;
+import com.justin.smartcampus.fireevacuation.dto.EvacuationSummaryDto;
 import com.justin.smartcampus.fireevacuation.service.EvacuationService;
 
 /**
@@ -40,7 +41,7 @@ public class FireEvacuationController {
   }
 
   @PostMapping()
-  public ResponseEntity<List<EvacuationDto>> uploadEvacuation(
+  public ResponseEntity<List<EvacuationSummaryDto>> uploadEvacuation(
       @RequestParam("file") final MultipartFile file) throws IOException {
     try (final BufferedReader lineReader = new BufferedReader(
         new BufferedReader(new InputStreamReader(file.getInputStream(), "UTF-8")))) {

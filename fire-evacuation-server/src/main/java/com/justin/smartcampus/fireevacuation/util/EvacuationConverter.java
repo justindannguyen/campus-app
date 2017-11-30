@@ -37,7 +37,7 @@ public interface EvacuationConverter {
     final Evacuation evacuation = new Evacuation();
     evacuation.setUsername(parts[0]);
     evacuation.setFullname(parts[1]);
-    evacuation.setEvacuationStatus(createFromString(parts[2]).name().toLowerCase());
+    evacuation.setEvacuationStatus(createFromString(parts[2]).name());
     evacuation.setLocationName(parts[3]);
     return evacuation;
   }
